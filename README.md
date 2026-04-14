@@ -52,6 +52,7 @@ This project demonstrates the following data science and machine learning skills
 The models produce the following ROC curve:
 
 ![ROC Curve](assets/roc_curve.png)
+![alt text](images/AUC_comparison.svg)
 
 All models demonstrate satisfactory classification performance and predictive power, as their ROC curves lie significantly above the diagonal representing random guessing. Among the tested models, XGBoost achieves the highest AUC, indicating the strongest ability to distinguish between good and bad loans.
 
