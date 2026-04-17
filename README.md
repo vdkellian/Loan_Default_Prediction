@@ -3,8 +3,7 @@
 ## 1. Executive Summary
 This project predicts the probability that a Lending Club loan becomes a bad loan using historical loan application and borrower risk features. The notebook compares multiple machine learning classifiers, including Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, and XGBoost, to identify which approach separates risky loans from healthier ones most effectively.
 
-The project is designed as a practical credit risk workflow: define the default target, prepare numeric borrower features, train several classifiers, and evaluate them with both predictive quality metrics and efficiency plots. The final notebook includes visual comparisons such as ROC curves, precision-recall curves, confusion matrices, and runtime charts to make model performance easy to communicate.
-
+XGBoost achieves the highest AUC among the evaluated models and therefore demonstrates the strongest ability to distinguish between good and bad loans. As a result, it could be integrated into the credit decision process to identify high-risk borrowers at an early stage. By improving the accuracy of default prediction, lenders can reduce expected credit losses, better manage risk exposure, and enhance overall profitability. 
 ## 2. Business Problem
 Consumer lending platforms need to estimate default risk before issuing a loan. Poor risk assessment can lead to higher charge-offs, weaker portfolio quality, and reduced investor confidence.
 
@@ -51,20 +50,18 @@ This project demonstrates the following data science and machine learning skills
 ## 5. Findings & Recommendations
 The models produce the following ROC curve:
 
-![alt text](images/ROC_comparison.svg)
-![alt text](images/AUC_comparison.svg)
+<div style="display:flex; gap:20px;">
+  <img src="images/ROC_comparison.svg" width="45%">
+  <img src="images/AUC_comparison.svg" width="45%">
+</div>
 
 All models demonstrate satisfactory classification performance and predictive power, as their ROC curves lie significantly above the diagonal representing random guessing. Among the tested models, XGBoost achieves the highest AUC, indicating the strongest ability to distinguish between good and bad loans.
 
 Such a model could be integrated into the loan approval process to identify high-risk borrowers at an early stage. By improving the accuracy of default prediction, lenders can make more informed decisions regarding loan approval, pricing, or risk mitigation strategies, ultimately reducing potential credit losses.
 
 ## 6. Next Steps
-There are several strong ways to extend this project:
+There are several strong ways to extend this project:ojnds;¥^
 
 - perform feature engineering with additional or transformed variables
 - replace simple zero imputation with a more robust preprocessing pipeline
-- address class imbalance with class weights or resampling methods
-- tune hyperparameters using cross-validation
-- calibrate predicted probabilities for better risk scoring
-- add feature importance or SHAP analysis for explainability
-- save the best-performing final model and document a repeatable inference workflow
+- address class imbalance with class weights or sampling techniques
