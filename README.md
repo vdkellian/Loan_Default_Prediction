@@ -1,7 +1,7 @@
 # Credit Risk Modelling Project
 
 ## 1. Executive Summary
-Lending Club is a peer-to-peer lending platform. This project predicts the probability that a Lending Club loan becomes a bad loan using historical loan application and borrower risk features. The notebook compares multiple machine learning classifiers, including Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, and XGBoost, to identify which approach separates risky loans from healthier ones most effectively.
+Lending Club is a peer-to-peer lending platform. This project aims to predict the probability that a Lending Club loan becomes a bad loan using historical loan application and borrower risk features. The notebook compares multiple machine learning classifiers, including Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, and XGBoost, to identify which approach separates risky loans from healthier ones most effectively.
 
 XGBoost achieves the highest AUC among the evaluated models and therefore demonstrates the strongest ability to distinguish between good and bad loans. As a result, it could be integrated into the credit decision process to identify high-risk borrowers at an early stage. By improving the accuracy of default prediction, lenders can reduce expected credit losses, better manage risk exposure, and enhance overall profitability. 
 ## 2. Business Problem
@@ -20,11 +20,11 @@ The workflow in [Jupyter_notebook.ipynb] follows a straightforward supervised le
 1. Create a binary target called `BadLoan` based on loan statuses associated with default, late payment, or charged off status
 2. Select numeric risk features identified in the EDA phase (see [other project] (https://github.com/vdkellian/P2P-Loans-Data-Exploration)):
    - `loan_amnt`: Amount borrowed from Lending Club
-   - `int_rate`: Loan interest rate, 
-   - `annual_inc`: Annual income at loan application date, 
-   - `dti`: Debt-to-income ratio at loan application date, 
+   - `int_rate`: Loan interest rate 
+   - `annual_inc`: Annual income at loan application date
+   - `dti`: Debt-to-income ratio at loan application date
    - `fico_range_low`: FICO score at loan application date 
-   - `installment`: Monthly loan installment amount, 
+   - `installment`: Monthly loan installment amount
    - `revol_util`: Number of revolving accounts at application date
    - `total_acc`: Total number of accounts at application date
    - `open_acc`: Total number of opened credit lines at application date
@@ -33,18 +33,16 @@ The workflow in [Jupyter_notebook.ipynb] follows a straightforward supervised le
 5. Train and compare five classifiers:
    `Logistic Regression`, `Decision Tree`, `Random Forest`, `Gradient Boosting`, and `XGBoost`
 6. Evaluate model performance using:
-   `Accuracy`, `Precision`, `Recall`, `F1`, `ROC-AUC`, `PR-AUC`, and confusion-matrix heatmaps
+   `Accuracy`, `Precision`, `Recall`, `F1`, `ROC-AUC`, `PR-AUC`, confusion matrices
 
 ## 4. Skills
-This project demonstrates the following data science and machine learning skills:
-
 - Understanding of loan approval process
 - binary classification for credit risk modeling
 - data cleaning and feature selection
 - train/test splitting with class stratification
 - model comparison across linear, tree-based, ensemble, and boosting methods
 - evaluation using both threshold-based and ranking-based metrics
-- visualization of model quality through ROC, metrics heatmaps, and confusion-matrix heatmaps
+- visualization of model quality through ROC, precision-recall, and confusion-matrix plots
 
 ## 5. Findings & Recommendations
 The models produce the following ROC curve:
@@ -52,13 +50,6 @@ The models produce the following ROC curve:
 <div style="display:flex; gap:20px;">
   <img src="images/ROC_comparison.svg" width="45%">
   <img src="images/AUC_comparison.svg" width="45%">
-</div>
-
-The notebook also produces a compact heatmap view of the main classification metrics and confusion matrices for each model:
-
-<div style="display:flex; gap:20px; flex-wrap:wrap;">
-  <img src="images/Metrics_heatmap.svg" width="45%">
-  <img src="images/Confusion_matrices.svg" width="45%">
 </div>
 
 All models demonstrate satisfactory classification performance and predictive power, as their ROC curves lie significantly above the diagonal representing random guessing. Among the tested models, XGBoost achieves the highest AUC, indicating the strongest ability to distinguish between good and bad loans.
