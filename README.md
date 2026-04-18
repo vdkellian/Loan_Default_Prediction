@@ -1,7 +1,7 @@
-# Loan Default Probability Project
+# Credit Risk Modelling Project
 
 ## 1. Executive Summary
-This project predicts the probability that a Lending Club loan becomes a bad loan using historical loan application and borrower risk features. The notebook compares multiple machine learning classifiers, including Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, and XGBoost, to identify which approach separates risky loans from healthier ones most effectively.
+Lending Club is a peer-to-peer lending platform. This project predicts the probability that a Lending Club loan becomes a bad loan using historical loan application and borrower risk features. The notebook compares multiple machine learning classifiers, including Logistic Regression, Decision Tree, Random Forest, Gradient Boosting, and XGBoost, to identify which approach separates risky loans from healthier ones most effectively.
 
 XGBoost achieves the highest AUC among the evaluated models and therefore demonstrates the strongest ability to distinguish between good and bad loans. As a result, it could be integrated into the credit decision process to identify high-risk borrowers at an early stage. By improving the accuracy of default prediction, lenders can reduce expected credit losses, better manage risk exposure, and enhance overall profitability. 
 ## 2. Business Problem
@@ -33,7 +33,7 @@ The workflow in [Jupyter_notebook.ipynb] follows a straightforward supervised le
 5. Train and compare five classifiers:
    `Logistic Regression`, `Decision Tree`, `Random Forest`, `Gradient Boosting`, and `XGBoost`
 6. Evaluate model performance using:
-   `Accuracy`, `Precision`, `Recall`, `F1`, `ROC-AUC`, `PR-AUC`, confusion matrices, training time, and prediction time
+   `Accuracy`, `Precision`, `Recall`, `F1`, `ROC-AUC`, `PR-AUC`, and confusion-matrix heatmaps
 
 ## 4. Skills
 This project demonstrates the following data science and machine learning skills:
@@ -44,8 +44,7 @@ This project demonstrates the following data science and machine learning skills
 - train/test splitting with class stratification
 - model comparison across linear, tree-based, ensemble, and boosting methods
 - evaluation using both threshold-based and ranking-based metrics
-- visualization of model quality through ROC, precision-recall, and confusion-matrix plots
-- communication of model efficiency using training and prediction runtime charts
+- visualization of model quality through ROC, metrics heatmaps, and confusion-matrix heatmaps
 
 ## 5. Findings & Recommendations
 The models produce the following ROC curve:
@@ -55,12 +54,19 @@ The models produce the following ROC curve:
   <img src="images/AUC_comparison.svg" width="45%">
 </div>
 
+The notebook also produces a compact heatmap view of the main classification metrics and confusion matrices for each model:
+
+<div style="display:flex; gap:20px; flex-wrap:wrap;">
+  <img src="images/Metrics_heatmap.svg" width="45%">
+  <img src="images/Confusion_matrices.svg" width="45%">
+</div>
+
 All models demonstrate satisfactory classification performance and predictive power, as their ROC curves lie significantly above the diagonal representing random guessing. Among the tested models, XGBoost achieves the highest AUC, indicating the strongest ability to distinguish between good and bad loans.
 
 Such a model could be integrated into the loan approval process to identify high-risk borrowers at an early stage. By improving the accuracy of default prediction, lenders can make more informed decisions regarding loan approval, pricing, or risk mitigation strategies, ultimately reducing potential credit losses.
 
 ## 6. Next Steps
-There are several strong ways to extend this project:ojnds;¥^
+There are several strong ways to extend this project
 
 - perform feature engineering with additional or transformed variables
 - replace simple zero imputation with a more robust preprocessing pipeline
