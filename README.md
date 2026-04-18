@@ -49,7 +49,7 @@ The models produce the following ROC curve:
 
 <div style="display:flex; gap:20px;">
   <img src="images/ROC_comparison.svg" width="45%">
-  <img src="images/AUC_comparison.svg" width="45%">
+  <img src="images/AUC_comparison.svg" width="55%">
 </div>
 
 All models demonstrate satisfactory classification performance and predictive power, as their ROC curves lie significantly above the diagonal representing random guessing. Among the tested models, XGBoost achieves the highest AUC, indicating the strongest ability to distinguish between good and bad loans.
